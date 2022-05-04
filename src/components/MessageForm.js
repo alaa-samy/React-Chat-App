@@ -1,10 +1,10 @@
 import {useState} from 'react';
 import { sendMessage , isTyping, ChatSettings} from 'react-chat-engine';
-import {sendOutlined , pictureOutlined, PictureOutlined, SendOutlined} from '@ant-design/icons'
+import {PictureOutlined, SendOutlined} from '@ant-design/icons'
 
 const MessageForm = (props) => {
   const [value , setValue] = useState('');
-  const [chatID , creds] = props;
+  const {chatID , creds} = props;
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -19,7 +19,7 @@ const MessageForm = (props) => {
   }
 
   const handleUpload = (event) =>{
-    sendMessage(creds , chatID , {files: event.target.value , text: ''})
+    sendMessage(creds , chatID , {files: event.target.files , text: ''})
   }
 
   return(
