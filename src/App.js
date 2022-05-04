@@ -1,8 +1,8 @@
 import "./App.css";
 import { ChatEngine } from "react-chat-engine";
-import { ChatFeed } from "./components/ChatFeed";
+import ChatFeed from "./components/ChatFeed";
 
-export default function App() {
+function App() {
   return (
     <ChatEngine
       height="100vh"
@@ -13,3 +13,4 @@ export default function App() {
     />
   );
 }
+export default App;
