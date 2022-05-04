@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { sendMessage , isTyping, ChatSettings} from 'react-chat-engine';
+import { sendMessage , isTyping} from 'react-chat-engine';
 import {PictureOutlined, SendOutlined} from '@ant-design/icons'
 
 const MessageForm = (props) => {

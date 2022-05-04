@@ -1,4 +1,3 @@
-import { PropertySafetyOutlined } from "@ant-design/icons";
 import MessageForm from "./MessageForm";
 import MyMessage from "./MyMessage";
 import OtherMessage from "./OtherMessage";
