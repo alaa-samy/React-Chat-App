@@ -1,5 +1,5 @@
 const OtherMessage = ({lastMessage , message}) => {
-    const isFirstUserMessage = !lastMessage || lastMessage.sender.userName !== message.sender.userName;
+    const isFirstUserMessage = !lastMessage || lastMessage.sender.userName != message.sender.userName;
 
     return(
       <div className="message-row">
@@ -11,7 +11,7 @@ const OtherMessage = ({lastMessage , message}) => {
         {(message?.attachments?.length > 0) ? 
           <img src={message.attachments[0].file} alt='message-img' className="message-image" style={{marginLeft: isFirstUserMessage ? '4px' : '48px'}}/>
           : 
-          <div className="message" style={{float: 'left', backgroundColor: 'green' , marginLeft: isFirstUserMessage ? '4px' : '48px'}}>
+          <div className="message" style={{float: 'left', backgroundColor: 'purple' , marginLeft: isFirstUserMessage ? '4px' : '48px'}}>
             {message.text}
           </div>
         }

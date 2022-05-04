@@ -4,10 +4,21 @@ import axios from 'axios'
 const LoginForm = () =>{
     const [userName , setUserName]= useState('');
     const [password , setPassword]= useState('')
+    const [error , setError]= useState('')
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = async (event) =>{
         event.preventDefault();
-        
+        const auth = {'Project-ID' : 'd1edd90d-3c5d-4f70-882b-4ff1de2da614' , 'User-Name': userName , 'User-Secret': password}
+        try{
+            await axios.get('https://api.chatengine.io/chats', {headers: auth});
+            localStorage.setItem('username',userName)
+            localStorage.setItem('password',password)
+
+            window.location.reload();
+
+        }catch(error){
+            setError('Oops, icorrect username or password')
+        }
     }
     return(
         <div className='wrapper'>
@@ -21,8 +32,11 @@ const LoginForm = () =>{
                             <span>Chat Now</span>
                         </button>
                     </div>
+
+                    <h2 className='error'>{error}</h2>
                 </form>
             </div>
         </div>
     )
 }
+export default LoginForm;
