@@ -5,12 +5,12 @@ import LoginForm from './components/LoginForm'
 
 function App() {
 
-  if(!localStorage.getItem('userName')) return <LoginForm />
+  if(!localStorage.getItem('username')) return <LoginForm />
   return (
     <ChatEngine
       height="100vh"
       projectID="d1edd90d-3c5d-4f70-882b-4ff1de2da614"
-      userName={localStorage.getItem('userName')}      //alaa-samy
+      userName={localStorage.getItem('username')}      //alaa-samy
       userSecret={localStorage.getItem('password')}    //1234
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />

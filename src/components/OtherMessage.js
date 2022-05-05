@@ -6,12 +6,12 @@ const OtherMessage = ({lastMessage , message}) => {
         {isFirstUserMessage && (
           <div className="message-avatar" style={{backgroundImage : `url(${message?.sender?.avatar})`}}>
           </div>
-        )};
+        )}
 
         {(message?.attachments?.length > 0) ? 
           <img src={message.attachments[0].file} alt='message-img' className="message-image" style={{marginLeft: isFirstUserMessage ? '4px' : '48px'}}/>
           : 
-          <div className="message" style={{float: 'left', backgroundColor: 'purple' , marginLeft: isFirstUserMessage ? '4px' : '48px'}}>
+          <div className="message" style={{float: 'left', backgroundColor: 'purple' , color: 'white', marginLeft: isFirstUserMessage ? '4px' : '48px'}}>
             {message.text}
           </div>
         }
